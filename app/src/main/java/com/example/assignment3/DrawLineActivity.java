@@ -5,13 +5,13 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +29,7 @@ public class DrawLineActivity extends AppCompatActivity {
     private Canvas canvas;
     private int color;
     private int strokeWidth;
+    private TextView lblCoordinates;
 
 
     @Override
@@ -96,6 +97,11 @@ public class DrawLineActivity extends AppCompatActivity {
             }
         });
 
+        // Set Coordiante Text
+        lblCoordinates = findViewById(R.id.txtCoordinate);
+        lblCoordinates.setText("X: " + Integer.toString(endx) + "\t Y: " + Integer.toString(endy));
+
+
         startDrawing();
 
     }
@@ -103,7 +109,7 @@ public class DrawLineActivity extends AppCompatActivity {
 
     // Resets the canvas
     public void clearCanvas(View v) {
-        canvas.drawColor(Color.WHITE);
+        canvas.drawColor(Color.BLACK);
         startx = 10;
         starty = 10;
         endx = 10;
@@ -128,35 +134,73 @@ public class DrawLineActivity extends AppCompatActivity {
         canvas.drawLine(startx, starty, endx, endy, paint);
         startx = endx;
         starty = endy;
-
+        lblCoordinates.setText("X: " + Integer.toString(endx) + "\t Y: " + Integer.toString(endy));
     }
+
+    // Button Actions
+    public boolean onLeftClick(View view) {
+        reusableImageView.setFocusable(true);
+        reusableImageView.requestFocus();
+        endx = endx - 5;
+        drawLine(canvas);
+        reusableImageView.invalidate();
+        return true;
+    }
+
+    public boolean onRightClick(View view) {
+        reusableImageView.setFocusable(true);
+        reusableImageView.requestFocus();
+        endx = endx + 5;
+        drawLine(canvas);
+        reusableImageView.invalidate();
+        return true;
+    }
+
+    public boolean onUpClick(View view) {
+        reusableImageView.setFocusable(true);
+        reusableImageView.requestFocus();
+        endy = endy - 5;
+        drawLine(canvas);
+        reusableImageView.invalidate();
+        return true;
+    }
+
+    public boolean onDownClick(View view) {
+        reusableImageView.setFocusable(true);
+        reusableImageView.requestFocus();
+        endy = endy + 5;
+        drawLine(canvas);
+        reusableImageView.invalidate();
+        return true;
+    }
+
 
     //DPAD Emulator
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        switch (keyCode) {
-            case KeyEvent.KEYCODE_DPAD_DOWN:
-                //reusableImageView.setVisibility(View.VISIBLE);
-                //reusableImageView.setFocusable(true);
-                //reusableImageView.requestFocus();
-                endy = endy + 5;
-                drawLine(canvas);
-                //moveRect(canvas);
-                //reusableImageView.invalidate();
-
-                return true;
-
-            case KeyEvent.KEYCODE_DPAD_RIGHT:
-                //reusableImageView.setVisibility(View.VISIBLE);
-                reusableImageView.setFocusable(true);
-                reusableImageView.requestFocus();
-                endx = endx + 5;
-                drawLine(canvas);
-                //moveRect(canvas);
-                reusableImageView.invalidate();
-
-                return true;
-        }
-        return false;
-    }
+//    public boolean onKeyDown(int keyCode, KeyEvent event) {
+//        switch (keyCode) {
+//            case KeyEvent.KEYCODE_DPAD_DOWN:
+//                //reusableImageView.setVisibility(View.VISIBLE);
+//                //reusableImageView.setFocusable(true);
+//                //reusableImageView.requestFocus();
+//                endy = endy + 5;
+//                drawLine(canvas);
+//                //moveRect(canvas);
+//                //reusableImageView.invalidate();
+//
+//                return true;
+//
+//            case KeyEvent.KEYCODE_DPAD_RIGHT:
+//                //reusableImageView.setVisibility(View.VISIBLE);
+//                reusableImageView.setFocusable(true);
+//                reusableImageView.requestFocus();
+//                endx = endx + 5;
+//                drawLine(canvas);
+//                //moveRect(canvas);
+//                reusableImageView.invalidate();
+//
+//                return true;
+//        }
+//        return false;
+//    }
 }
 

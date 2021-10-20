@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -92,24 +93,109 @@
 
                     <TableLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+                        <!-- Row 1 -->
                         <TableRow
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            android:layout_height="match_parent"
+                            android:weightSum="3">
 
+                            <ImageButton
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:visibility="invisible">
+
+                            </ImageButton>
+
+                            <ImageButton
+                                android:id="@+id/imgbuttonUp"
+                                android:layout_weight="1"
+                                android:background="@drawable/arrowup"
+                                android:onClick="onUpClick">
+
+                            </ImageButton>
+
+                            <ImageButton
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:visibility="invisible"
+                                tools:visibility="invisible">
+
+                            </ImageButton>
+
+                        </TableRow>
+
+                        <!-- Row 2 -->
                         <TableRow
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            android:layout_height="match_parent"
+                            android:weightSum="3">
 
+                            <ImageButton
+                                android:id="@+id/imgbuttonLeft"
+                                android:layout_weight="1"
+                                android:background="@drawable/arrowleft"
+                                android:onClick="onLeftClick">
+
+                            </ImageButton>
+
+                            <ImageButton
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:visibility="invisible">
+
+                            </ImageButton>
+
+                            <ImageButton
+                                android:id="@+id/imgbuttonRight"
+                                android:layout_weight="1"
+                                android:background="@drawable/arrowright"
+                                android:onClick="onRightClick">
+
+                            </ImageButton>
+
+                        </TableRow>
+
+
+                        <!-- Row 3 -->
                         <TableRow
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            android:layout_height="match_parent"
+                            android:weightSum="3">
 
-                        <TableRow
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            <ImageButton
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:visibility="invisible">
+
+                            </ImageButton>
+
+                            <ImageButton
+                                android:id="@+id/imgbuttonDown"
+                                android:layout_weight="1"
+                                android:background="@drawable/arrowdown"
+                                android:onClick="onDownClick">
+
+                            </ImageButton>
+
+                            <ImageButton
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:visibility="invisible">
+
+                            </ImageButton>
+
+                        </TableRow>
+
+
                     </TableLayout>
+
                 </LinearLayout>
 
             </LinearLayout>
@@ -147,10 +233,9 @@
                 android:id="@+id/ImageViewForDrawing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:minHeight="300px"
-                android:minWidth="300px"
-                android:layout_margin="20px">
-            </ImageView>
+                android:layout_margin="20px"
+                android:minWidth="600px"
+                android:minHeight="600px"></ImageView>
 
         </LinearLayout>
 
