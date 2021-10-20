@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Assignment 3</string>
+    <string name="lblSelectTask">Select a task to show the solution:</string>
+    <string name="lblLineThickness">Line Thickness</string>
+    <string name="lblLineColor">Line Color</string>
+    <string name="lblArrowKeys">Arrow Keys</string>
+    <string name="radRed">Red</string>
+    <string name="radGreen">Green</string>
+    <string name="radYellow">Yellow</string>
+    <string name="btnClear">CLEAR</string>
+
+    <string-array name="tasks">
+        <item>Task 1</item>
+        <item>Task 2</item>
+        <item>Task 3</item>
+    </string-array>
+</resources>
