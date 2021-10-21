@@ -77,6 +77,5 @@ public class FrameAnimationActivity extends AppCompatActivity {
     private void stopAnimation() {
         mframeAnimation.stop();
         mframeAnimation.setVisible(false, false);
-
     }
 }
