@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Assignment 3</string>
+    <string name="app_name">George Zhou COMP304 SEC004 Lab 03</string>
     <string name="lblSelectTask">Select a task to show the solution:</string>
     <string name="lblLineThickness">Line Thickness</string>
     <string name="lblLineColor">Line Color</string>
